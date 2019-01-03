@@ -1,0 +1,13 @@
+# https://taskfile.org
+
+version: '2'
+
+tasks:
+  install:
+    cmds:
+      - go-bindata -o assets.go assets/
+      - go install
+  run:
+    deps: [install]
+    cmds:
+      - gw2timer
